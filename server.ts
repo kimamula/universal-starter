@@ -26,7 +26,8 @@ app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
     provideModuleMap(LAZY_MODULE_MAP)
-  ]
+  ],
+  pushConfig: require('./browser/ngpush-config.json')
 }));
 
 app.set('view engine', 'html');

@@ -1,6 +1,11 @@
-# Angular Universal Starter
+# Angular Universal Starter with HTTP/2 Server Push
 
 ![Angular Universal](https://angular.io/assets/images/logos/concept-icons/universal.png)
+
+Issue: https://github.com/angular/angular-cli/issues/11946
+Demo: https://angular-prpl.appspot.com/
+
+Chrome users may have to disable `Experimental QUIC protocol` in `about:flags` to make HTTP/2 Server Push work (I don't know why, but https://http2-push.appspot.com/ also has this problem).
 
 A minimal Angular starter for Universal JavaScript using the [Angular CLI](https://github.com/angular/angular-cli)
 If you're looking for the Angular Universal repo go to [**angular/universal**](https://github.com/angular/universal)  
