@@ -1,3 +1,10 @@
+# ngx-server-push-demo
+
+HTTP/2 Server Push Enabled Angular Universal app.
+Using [ngx-server-push](https://github.com/kimamula/ngx-server-push).
+
+Demo: https://ngx-server-push-demo.appspot.com/
+
 # Angular Universal Starter
 
 ![Angular Universal](https://angular.io/assets/images/logos/concept-icons/universal.png)

@@ -8,6 +8,7 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 
 import * as express from 'express';
 import {join} from 'path';
+import { providePushConfig } from '@ngx-server-push/common';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -25,7 +26,8 @@ const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./server/main');
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
   providers: [
-    provideModuleMap(LAZY_MODULE_MAP)
+    provideModuleMap(LAZY_MODULE_MAP),
+    providePushConfig(require('./browser/ngx-server-push.config.json'))
   ]
 }));
 
@@ -42,7 +44,7 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
-  res.render('index', { req });
+  res.render('index', { req, res });
 });
 
 // Start up the Node server
